@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "cncpatch")(type "KiCad")(uri "${KIPRJMOD}/cncpatch.pretty")(options "")(descr ""))
+)
