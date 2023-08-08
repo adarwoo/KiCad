@@ -7,19 +7,14 @@ import re
 
 from math import tan, radians
 from enum import IntEnum
-
 from typing import List, Tuple, Dict
 
-# Grab the setups
-from defaults import *
-from setup import *
-
+from settings import *
 from inventory import Inventory, Oblong
+from utils import Coordinate, interpolate_points, optimize_travel, M2U, U2M
 
 
 # Convert mm constants locally in um constants
-M2U = lambda n: int(1e6*n)
-U2M = lambda n: float(n/1e6)
 DRILL_BIT_SIZES_UM = [M2U(s) for s in DRILL_BIT_SIZES_MM]
 MAX_DRILL_DEPTH_INTO_BACKBOARD_UM = M2U(MAX_DRILL_DEPTH_INTO_BACKBOARD_MM)
 MIN_EXIT_DEPTH_UM = M2U(MIN_EXIT_DEPTH_MM)
@@ -41,46 +36,6 @@ class MachiningWhat(IntEnum):
     DRILL_NPTH_AND_ROUTE_OUTLINE = DRILL_NPTH | ROUTE_OUTLINE
     DRILL_ALL = DRILL_PTH | DRILL_NPTH
     DRILL_AND_ROUTE_ALL = DRILL_ALL | ROUTE_OUTLINE
-
-class Coordinate:
-    def __init__(self, x: int, y: int):
-        self.x = x
-        self.y = y
-
-def optimize_travel(coordinates: List[Tuple[int,int]]) -> List[int]:
-    """
-    Apply the Travelling Salesman Problem to the positions
-    the CNC will visit.
-    @param coordinates A list of (x,y) coordinates to visit
-    @returns A list containing the ordered position of each coordinate to visit
-    """
-    from python_tsp.exact import solve_tsp_dynamic_programming
-
-    def get_distance_matrix(coordinates):
-        """ Create a matrix of all distance using numpy """
-        import numpy as np
-
-        num_coords = len(coordinates)
-        distance_matrix = np.zeros((num_coords, num_coords))
-
-        for i in range(num_coords):
-            for j in range(i + 1, num_coords):
-                distance = np.linalg.norm(np.array(coordinates[i]) - np.array(coordinates[j]))
-
-                # Assign distance to both (i, j) and (j, i) positions in the matrix
-                distance_matrix[i, j] = distance
-                distance_matrix[j, i] = distance
-
-        return distance_matrix
-
-    retval = []
-
-    if coordinates:
-        distance_matrix = get_distance_matrix(coordinates)
-        permutation, distance = solve_tsp_dynamic_programming(distance_matrix)
-        retval = [coordinates[i] for i in permutation]
-        
-    return retval
 
 
 def find_nearest_drillbit_size(n, sizes=DRILL_BIT_SIZES_UM, allow_bigger=True):
@@ -123,26 +78,6 @@ def find_nearest_drillbit_size(n, sizes=DRILL_BIT_SIZES_UM, allow_bigger=True):
             retval = s
 
     return retval
-
-
-def interpolate_points(start: Coordinate, end: Coordinate, spacing):
-    import numpy as np
-
-    # Convert the start and end points to NumPy arrays
-    start_point = np.array(start)
-    end_point = np.array(end)
-
-    # Calculate the distance and direction between start and end points
-    direction = end_point - start_point
-    distance = np.linalg.norm(direction)
-
-    # Calculate the number of intermediate points required
-    num_points = int(distance / spacing)
-
-    # Generate the list of intermediate points
-    intermediate_points = [start_point + i * (direction / num_points) for i in range(1, num_points)]
-
-    return intermediate_points
 
 
 class DrillCoordinate(Coordinate):
@@ -304,6 +239,9 @@ class Machining:
                 # Add all holes into the rack data
                 self.rack[dia].extend(coordinates)
 
+    def get_rack(self):
+        return self.rack
+    
     def gcode(self):
         # Start with the drills
 

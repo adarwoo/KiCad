@@ -908,6 +908,35 @@
         )
       )
     )
+    (symbol "Mechanical:MountingHole" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+      (property "Reference" "H" (at 0 5.08 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "MountingHole" (at 0 3.175 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "mounting hole" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Mounting Hole without connection" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "MountingHole*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "MountingHole_0_1"
+        (circle (center 0 0) (radius 1.27)
+          (stroke (width 1.27) (type default))
+          (fill (type none))
+        )
+      )
+    )
     (symbol "Regulator_Linear:LM7805_TO220" (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at -3.81 3.175 0)
         (effects (font (size 1.27 1.27)))
@@ -2193,11 +2222,11 @@
     (uuid ff50049f-ff7d-44b5-b8ee-3509fd9e902f)
   )
 
-  (label "LCD.E" (at 133.35 77.47 0)
+  (label "LCD.E" (at 133.35 77.47 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 199bf769-2031-47a1-a199-a6447abfc534)
   )
-  (label "LCD.D4" (at 133.35 85.09 0)
+  (label "LCD.D4" (at 133.35 85.09 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 48d2f5c2-7a8b-4708-984b-707aee95a2a4)
   )
@@ -2205,7 +2234,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 6fd05ea6-56c8-4032-9b90-b6bc2d99da4f)
   )
-  (label "LCD.D7" (at 133.35 92.71 0)
+  (label "LCD.D7" (at 133.35 92.71 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 7c07a78e-1a9d-4022-acc2-18dd90900084)
   )
@@ -2221,11 +2250,11 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 8e6d5ebf-b809-49f8-a8ff-5a489125877b)
   )
-  (label "LCD.R{slash}~{W}" (at 133.35 80.01 0)
+  (label "LCD.R{slash}~{W}" (at 133.35 80.01 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 9392acd6-07d9-43cb-9ed5-d7d33edec901)
   )
-  (label "LCD.D5" (at 133.35 87.63 0)
+  (label "LCD.D5" (at 133.35 87.63 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 9b9bbec8-7c70-4bd3-82a3-3d3dc7037725)
   )
@@ -2233,7 +2262,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 9cd7bfa0-801d-4f88-90b9-1c85f6c03666)
   )
-  (label "LCD.D6" (at 133.35 90.17 0)
+  (label "LCD.D6" (at 133.35 90.17 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid d9cbed01-60b1-49dc-b68a-da089ac3ecc1)
   )
@@ -2249,7 +2278,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid ef30c6df-7d47-4ce3-9746-c1c053d0b137)
   )
-  (label "LCD.RS" (at 133.35 82.55 0)
+  (label "LCD.RS" (at 133.35 82.55 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid f17ad76c-52cb-4d09-9fea-66fd773da37b)
   )
@@ -2317,7 +2346,7 @@
     (pin "8" (uuid b2d4863f-6bac-4337-b22a-62d32c9be83b))
     (pin "9" (uuid 074f7016-81aa-4758-9b93-e1b27d2d7d5f))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "U4") (unit 1)
         )
@@ -2343,9 +2372,33 @@
     (pin "1" (uuid b6627d3d-1add-498f-bfe0-ff9f61a43254))
     (pin "2" (uuid 850c45b7-7b43-4186-818a-3d756a381142))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R9") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 59.69 41.91 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 0df42c8d-72bf-4589-9a74-791779f5fcc2)
+    (property "Reference" "H4" (at 59.69 36.83 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "MountingHole" (at 59.69 38.735 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 59.69 41.91 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 59.69 41.91 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "pulsegen"
+        (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
+          (reference "H4") (unit 1)
         )
       )
     )
@@ -2369,7 +2422,7 @@
     (pin "1" (uuid e956b9a3-5727-4c31-8dff-85faf6b97b7e))
     (pin "2" (uuid e416383c-a201-4c19-8b12-954affca9d7a))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R14") (unit 1)
         )
@@ -2395,7 +2448,7 @@
     (pin "1" (uuid b4525389-8ee6-4c21-a321-5796c2084596))
     (pin "2" (uuid 31f85b4b-dc21-4901-bc96-7f93a37a4bbe))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R3") (unit 1)
         )
@@ -2420,7 +2473,7 @@
     )
     (pin "1" (uuid 9be5fed1-8598-476d-a068-f19a547347b6))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR02") (unit 1)
         )
@@ -2446,7 +2499,7 @@
     (pin "1" (uuid 27599804-8698-42fc-942a-bb4c1a8c0bb4))
     (pin "2" (uuid 8b5b391e-22e8-4859-9471-236884850edc))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R2") (unit 1)
         )
@@ -2472,7 +2525,7 @@
     (pin "1" (uuid 2f45a56c-b7dd-4680-8e3e-6186aa2abc57))
     (pin "2" (uuid 83599172-dec7-4879-8811-a4b3eafed534))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "SW1") (unit 1)
         )
@@ -2489,7 +2542,7 @@
     (property "Value" "10u" (at 106.68 173.101 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 103.8352 176.53 0)
+    (property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 103.8352 176.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 102.87 172.72 0)
@@ -2498,7 +2551,7 @@
     (pin "1" (uuid a5c1d3d6-1947-43ac-83b1-300142e59905))
     (pin "2" (uuid 501d3fb1-b3e7-45f7-92bc-bf95abfc82df))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "C3") (unit 1)
         )
@@ -2523,7 +2576,7 @@
     )
     (pin "1" (uuid 05a3809e-33fe-4583-a989-c303c4877143))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR017") (unit 1)
         )
@@ -2548,7 +2601,7 @@
     )
     (pin "1" (uuid 5995b20a-e72c-4467-9f6e-e22a40cafe37))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "J1") (unit 1)
         )
@@ -2573,7 +2626,7 @@
     )
     (pin "1" (uuid 00bd652d-c06f-4259-a1b8-c8e734f19433))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "J4") (unit 1)
         )
@@ -2603,7 +2656,7 @@
     (pin "5" (uuid c9574da9-81a2-4c95-957d-2fd9360e0c6a))
     (pin "6" (uuid 50659dff-db81-4dc3-ac41-fcd3d770ac81))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "J5") (unit 1)
         )
@@ -2629,7 +2682,7 @@
     (pin "1" (uuid f4239641-ce97-46c5-b0b2-0f4463d440f1))
     (pin "2" (uuid 613f1e38-40f9-482b-a511-5cb3cb0f48d2))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R17") (unit 1)
         )
@@ -2656,7 +2709,7 @@
     (pin "2" (uuid 12284c18-ff87-494d-b7bd-244e1a6984e3))
     (pin "3" (uuid 6079286f-b0f0-46ed-a160-df38b868bad1))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "Q4") (unit 1)
         )
@@ -2673,7 +2726,7 @@
     (property "Value" "C" (at 111.76 40.64 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 108.9152 43.18 0)
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 108.9152 43.18 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 107.95 39.37 0)
@@ -2682,7 +2735,7 @@
     (pin "1" (uuid c60c48b8-077d-4678-9168-c6f3f00ce919))
     (pin "2" (uuid a2cf034a-b747-48c3-aaa6-b7be605e9a0c))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "C2") (unit 1)
         )
@@ -2708,7 +2761,7 @@
     (pin "1" (uuid b92a82e3-b5ee-44da-b8ea-2552b1602fbb))
     (pin "2" (uuid 322e015b-94d4-4625-afb0-76e57a53a675))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R16") (unit 1)
         )
@@ -2733,7 +2786,7 @@
     )
     (pin "1" (uuid 0ea5d366-f7c2-4c81-a8db-19d5b6c5b7dd))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR01") (unit 1)
         )
@@ -2759,7 +2812,7 @@
     (pin "1" (uuid 16ed325d-bb1e-404f-a872-8e4a14f146e6))
     (pin "2" (uuid 0218fccb-9496-474e-8bc2-819b47169a0e))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R1") (unit 1)
         )
@@ -2786,7 +2839,7 @@
     (pin "2" (uuid 4537419c-b48d-4462-834e-65f2358d6189))
     (pin "3" (uuid cdf82297-9754-4356-b34d-afa39b95dd9a))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "Q3") (unit 1)
         )
@@ -2813,7 +2866,7 @@
     (pin "2" (uuid 9fe457cd-9214-46b9-991b-5bd12eba7a94))
     (pin "3" (uuid df8c5efd-b3e5-4e98-b455-e9b0520f273b))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "U3") (unit 1)
         )
@@ -2840,9 +2893,33 @@
     (pin "2" (uuid c222cf44-2aa0-4cd0-aecc-d42f7ad54cb2))
     (pin "3" (uuid 31cccb10-189c-4e79-9e63-f5c6aa11c8df))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "Q1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 26.67 38.1 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 5d9be6fd-317d-4a68-9feb-73a746cd49a2)
+    (property "Reference" "H2" (at 26.67 33.02 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "MountingHole" (at 26.67 34.925 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 26.67 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 26.67 38.1 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "pulsegen"
+        (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
+          (reference "H2") (unit 1)
         )
       )
     )
@@ -2866,7 +2943,7 @@
     (pin "1" (uuid 17c71dbb-7c91-4e25-8034-1ded76c491bb))
     (pin "2" (uuid 7d2ba9ba-06b2-41d3-8416-81e72e8d5d0b))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R5") (unit 1)
         )
@@ -2883,7 +2960,7 @@
     (property "Value" "10u" (at 76.2 173.101 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 73.3552 176.53 0)
+    (property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 73.3552 176.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 72.39 172.72 0)
@@ -2892,7 +2969,7 @@
     (pin "1" (uuid 929d2775-8309-416c-8e25-95c5a21714ee))
     (pin "2" (uuid ed96a93c-92e8-46ad-8626-82ed424478de))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "C4") (unit 1)
         )
@@ -2917,7 +2994,7 @@
     )
     (pin "1" (uuid e80a5849-157a-4d9c-a79a-c2acf29c7fcf))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR011") (unit 1)
         )
@@ -2934,7 +3011,7 @@
     (property "Value" "10u" (at 260.35 115.951 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (at 257.5052 119.38 0)
+    (property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 257.5052 119.38 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 256.54 115.57 0)
@@ -2943,7 +3020,7 @@
     (pin "1" (uuid c29129a8-399e-4d4d-ab69-0e2178d53c59))
     (pin "2" (uuid 329e4d6a-c937-4eb4-a1c5-c99caee141d8))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "C1") (unit 1)
         )
@@ -2968,7 +3045,7 @@
     )
     (pin "1" (uuid abfb8152-cea6-4708-af9e-38a0eb8cd081))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR020") (unit 1)
         )
@@ -2993,9 +3070,33 @@
     )
     (pin "1" (uuid 7b7acc4f-df6d-499f-a1e2-2a452a08108a))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR09") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 35.56 48.26 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 85052758-41a7-4d20-adb2-d2dd9f6ebc60)
+    (property "Reference" "H5" (at 35.56 43.18 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "MountingHole" (at 35.56 45.085 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 35.56 48.26 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 35.56 48.26 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "pulsegen"
+        (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
+          (reference "H5") (unit 1)
         )
       )
     )
@@ -3022,7 +3123,7 @@
     (pin "S1" (uuid c383ab03-615a-46eb-bc55-18c3f75f25b1))
     (pin "S2" (uuid e1e2f78e-fe60-4ea8-a595-72c4bf2dab11))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "SW3") (unit 1)
         )
@@ -3047,7 +3148,7 @@
     )
     (pin "1" (uuid 50d82386-408e-4e1f-87da-3e4ee60c8ac1))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR015") (unit 1)
         )
@@ -3087,7 +3188,7 @@
     (pin "8" (uuid b02a42f1-3f2b-40fd-8c0b-af4b5485e5c6))
     (pin "9" (uuid cd760fe4-424c-4fb0-9be5-56cce88836cb))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "DS1") (unit 1)
         )
@@ -3112,7 +3213,7 @@
     )
     (pin "1" (uuid d4740d40-3c2d-4bcb-8a63-5d0a663c0c0a))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR03") (unit 1)
         )
@@ -3137,7 +3238,7 @@
     )
     (pin "1" (uuid 8f3832d5-7618-4503-b85f-b41de0664f2d))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR05") (unit 1)
         )
@@ -3166,7 +3267,7 @@
     (pin "3" (uuid 9ecab06b-db35-4592-b852-11f8c2e233f5))
     (pin "4" (uuid 14bab326-d72c-4a47-8fa5-8712ec037206))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "U2") (unit 1)
         )
@@ -3191,7 +3292,7 @@
     )
     (pin "1" (uuid adaf5c30-037d-4916-9862-012c893e0cf4))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR013") (unit 1)
         )
@@ -3216,7 +3317,7 @@
     )
     (pin "1" (uuid 3db21f59-7327-4a5c-a77b-5d22ad38211f))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR010") (unit 1)
         )
@@ -3241,7 +3342,7 @@
     )
     (pin "1" (uuid 5a0643a6-e3b9-4607-91d8-3f4e1560005e))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR014") (unit 1)
         )
@@ -3273,7 +3374,7 @@
     (pin "1" (uuid 60df4a7b-c60b-4c33-8d52-6dff5bf68b55))
     (pin "2" (uuid 9dc28356-6749-47d7-96b6-df48c250af6a))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "D1") (unit 1)
         )
@@ -3298,7 +3399,7 @@
     )
     (pin "1" (uuid a2d66938-a8a5-4ec2-b271-d98ea58cf73c))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "J3") (unit 1)
         )
@@ -3324,7 +3425,7 @@
     (pin "1" (uuid 1ce93f17-cd45-458f-9281-a194b3a8850a))
     (pin "2" (uuid 76f01594-4185-461d-b58e-f4fddfea2445))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R15") (unit 1)
         )
@@ -3350,7 +3451,7 @@
     (pin "1" (uuid 0bdd7dda-0943-4479-adb2-949b8cb082e9))
     (pin "2" (uuid 75a5f964-5655-4ab1-b727-1633a8a2f1d6))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R4") (unit 1)
         )
@@ -3375,7 +3476,7 @@
     )
     (pin "1" (uuid b0c2b92f-4555-4390-a4fd-b12cf2da6811))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR012") (unit 1)
         )
@@ -3402,7 +3503,7 @@
     (pin "2" (uuid 2207afbe-97ee-4109-afd9-d52d4ab32249))
     (pin "3" (uuid 7d1b7819-ea4f-4de1-97e1-79277c3a1991))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "RV2") (unit 1)
         )
@@ -3427,7 +3528,7 @@
     )
     (pin "1" (uuid cfeeb614-bc59-40a3-9447-2b58cd7d714f))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR018") (unit 1)
         )
@@ -3452,7 +3553,7 @@
     )
     (pin "1" (uuid ba0209ca-72ac-4f41-a77e-117ad28b6bf3))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR04") (unit 1)
         )
@@ -3477,7 +3578,7 @@
     )
     (pin "1" (uuid afe5b9a1-2df8-4aab-8028-6d61e668a749))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR019") (unit 1)
         )
@@ -3503,7 +3604,7 @@
     (pin "1" (uuid 91f98775-3a76-478c-995a-a7095a6a43ca))
     (pin "2" (uuid c4a1012e-5bb3-468a-88f8-3c43db562ac3))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R6") (unit 1)
         )
@@ -3529,7 +3630,7 @@
     (pin "1" (uuid f0f2dabe-baeb-4424-9e8b-5c56aa5c2c77))
     (pin "2" (uuid 3535a268-6b87-4495-ad78-4f1761f8bb45))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R7") (unit 1)
         )
@@ -3554,7 +3655,7 @@
     )
     (pin "1" (uuid 4c546843-e748-4cd3-8981-aafc38e8bf7b))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "J2") (unit 1)
         )
@@ -3579,9 +3680,33 @@
     )
     (pin "1" (uuid b9582e14-2360-425a-a7a1-667941c6c595))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR06") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Mechanical:MountingHole") (at 38.1 26.67 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid dfdeed18-e12a-4160-8e3a-15836e7b2335)
+    (property "Reference" "H1" (at 40.64 25.4 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (at 40.64 27.94 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 38.1 26.67 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 38.1 26.67 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (instances
+      (project "pulsegen"
+        (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
+          (reference "H1") (unit 1)
         )
       )
     )
@@ -3605,7 +3730,7 @@
     (pin "1" (uuid 9fa4194e-4e3b-4b25-bc4e-2e35a5f6a772))
     (pin "2" (uuid 2df636c0-abce-4527-ac92-90f71b8aeb75))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R8") (unit 1)
         )
@@ -3630,7 +3755,7 @@
     )
     (pin "1" (uuid d04936a7-57f0-462c-ab3b-5f192ed6248b))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR016") (unit 1)
         )
@@ -3656,7 +3781,7 @@
     (pin "1" (uuid 99726970-a150-4f36-878f-58db03a4703e))
     (pin "2" (uuid 1ffb1af0-8beb-4564-96db-6b245cc9d890))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "R13") (unit 1)
         )
@@ -3681,7 +3806,7 @@
     )
     (pin "1" (uuid cd89b611-e196-4d27-ba91-b0eb34ac7f67))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR07") (unit 1)
         )
@@ -3706,7 +3831,7 @@
     )
     (pin "1" (uuid 805a8cd4-1d49-4f21-83b2-dd4c303300ad))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "#PWR08") (unit 1)
         )
@@ -3733,7 +3858,7 @@
     (pin "2" (uuid 7a8ca607-6913-4ea5-ba55-38aacd4990c3))
     (pin "3" (uuid 0d4d53aa-6f2a-4205-ab85-1b41feff7dc2))
     (instances
-      (project "pulsegem"
+      (project "pulsegen"
         (path "/392deba7-85e2-4959-aaa2-807ce1e9d5c2"
           (reference "Q5") (unit 1)
         )
