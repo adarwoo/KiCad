@@ -6,6 +6,10 @@ import bisect
 M2U = lambda n: int(1e6*n)
 U2M = lambda n: float(n/1e6)
 
+# Lookup and interpolate a value from a 
+INTERPOLATE_LUT_AT = lambda value, table, pos, scale=1: (
+    interpolate_lookup(table, value)[pos]*scale)
+
 
 class Coordinate:
     def __init__(self, x: int, y: int):
