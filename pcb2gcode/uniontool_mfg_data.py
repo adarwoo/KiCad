@@ -2,7 +2,7 @@
 # Copyright(C)2005 UNION TOOL CO. All rights reserved.
 
 # Standard drillbit sizes
-DRILLBIT_STANDARD_SIZES_MM = {
+DRILLBIT_SIZES_MM = {
     0.05, 0.07, 0.09, 0.1 , 0.12, 0.15, 0.2 , 0.25, 0.27, 0.3, 0.35, 0.4, 0.45, 0.5,
     0.55, 0.6 , 0.65, 0.7 , 0.75, 0.8 , 0.85, 0.9 , 0.95, 1.0, 1.05, 1.1, 1.15, 1.2,
     1.25, 1.3 , 1.35, 1.4 , 1.45, 1.5 , 1.55, 1.6 , 1.65, 1.7 , 1.75, 1.8 , 1.85, 1.9,
@@ -11,7 +11,7 @@ DRILLBIT_STANDARD_SIZES_MM = {
 }
 
 # Standard router bit sizes
-ROUTERBIT_STANDARD_SIZES_MM = {
+ROUTERBIT_SIZES_MM = {
     0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9,
     2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.175
 }
@@ -20,7 +20,7 @@ ROUTERBIT_STANDARD_SIZES_MM = {
 # @see https://www.uniontool.co.jp/assets/pdf/product/drill_router/06fr4_100k_ds-4l.pdf
 # Key is router diameter in mm
 # Value is: 0=Spindle Speed (Rpm), 1=Z Feed (m/min)
-DRILL_BIT_DATA_LOOKUP = {
+DRILLBIT_DATA_LOOKUP = {
     0.05: (10000, 5000 ),
     0.07: (10000, 5000 ),
     0.09: (10000, 5000 ),
@@ -95,7 +95,7 @@ DRILL_BIT_DATA_LOOKUP = {
 # @see https://www.uniontool.co.jp/en/product/drill_router/technical_info/router_condi/fr4.html
 # Key is router diameter in mm
 # Value is: 0=Spindle Speed (Rpm), 1=Table Feed (m/min), 2=Z Feed (m/min), 3=back board depth (mm)
-ROUTER_BIT_DATA_LOOKUP = {
+ROUTERBIT_DATA_LOOKUP = {
     0.8: (60000, 0.4, 0.1, 0.75),
     0.9: (53000, 0.6, 0.1, 0.75),
     1.0: (48000, 0.8, 0.1, 0.75),

@@ -11,8 +11,7 @@ from enum import IntEnum
 from typing import List, Tuple, Dict
 
 # Grab the setups
-from defaults import *
-from setup import *
+from settings import *
 
 from inventory import Inventory, Oblong
 
@@ -20,8 +19,8 @@ from inventory import Inventory, Oblong
 # Convert mm constants locally in um constants
 M2U = lambda n: int(1e6*n)
 U2M = lambda n: float(n/1e6)
-DRILL_BIT_SIZES_UM = [M2U(s) for s in DRILL_BIT_SIZES_MM]
-MAX_DRILL_DEPTH_INTO_BACKBOARD_UM = M2U(MAX_DRILL_DEPTH_INTO_BACKBOARD_MM)
+DRILLBIT_SIZES_UM = [M2U(s) for s in DRILLBIT_SIZES_MM]
+MAX_DRILL_DEPTH_INTO_BACKBOARD_UM = M2U(MAX_DEPTH_INTO_BACKBOARD_MM)
 MIN_EXIT_DEPTH_UM = M2U(MIN_EXIT_DEPTH_MM)
 
 # Multiple the diameter by this number to find the length of the tip of the bit
@@ -29,7 +28,7 @@ HEIGHT_TO_DIA_RATIO = tan(radians((180-DRILLBIT_POINT_ANGLE_DEGREE)/2))
 # Regex to split the rack string
 SPLIT_RACK_RE = re.compile(r"T(\d+):(R?[\d.]+)")
 
-MAX_DRILL_BIT_DIAMETER_FOR_CLEAN_EXIT_UM = \
+MAX_DRILLBIT_DIAMETER_FOR_CLEAN_EXIT_UM = \
     int(MAX_DRILL_DEPTH_INTO_BACKBOARD_UM - MIN_EXIT_DEPTH_UM) / HEIGHT_TO_DIA_RATIO
 
 
@@ -83,7 +82,7 @@ def optimize_travel(coordinates: List[Tuple[int,int]]) -> List[int]:
     return retval
 
 
-def find_nearest_drillbit_size(n, sizes=DRILL_BIT_SIZES_UM, allow_bigger=True):
+def find_nearest_drillbit_size(n, sizes=DRILLBIT_SIZES_UM, allow_bigger=True):
     """
     Find from the standard size, the nearest bit.
     Grab the neareast smaller and nearest larger and check within acceptable
@@ -201,8 +200,8 @@ class Machining:
             matches = []
 
         for tool_number, tool_diameter in matches:
-            is_router_bit = tool_diameter.startswith('R')
-            tool_diameter = tool_diameter[1:] if is_router_bit else tool_diameter                
+            is_ROUTERBIT = tool_diameter.startswith('R')
+            tool_diameter = tool_diameter[1:] if is_ROUTERBIT else tool_diameter                
             tool_diameter = float(tool_diameter)
 
             # Check the tool number is not repeated
@@ -215,7 +214,7 @@ class Machining:
                 continue
 
             if 0.1 <= tool_diameter <= 6.0:
-                print(f"Tool Number: {tool_number}, Tool Diameter: {tool_diameter:.2f}, Router: {is_router_bit}")
+                print(f"Tool Number: {tool_number}, Tool Diameter: {tool_diameter:.2f}, Router: {is_ROUTERBIT}")
             else:
                 self.warn(
                     f"Invalid tool diameter {tool_diameter:.2f} mm for T{tool_number} found in the rack",
@@ -225,7 +224,7 @@ class Machining:
                 continue
 
             # Make sure the diameter matches with the standard drill sizes - simply warn
-            if tool_diameter not in DRILL_BIT_SIZES_MM:
+            if tool_diameter not in DRILLBIT_SIZES_MM:
                 self.warn(
                     f"T{tool_number} in the rack {USE_RACK_ID} has a non standard diameter {tool_diameter}."
                 )
@@ -273,7 +272,7 @@ class Machining:
                     # Look for the bit size in the standard set
                     dia = find_nearest_drillbit_size(bit_dia_um)
 
-            if dia is None or dia > MAX_DRILL_BIT_DIAMETER_FOR_CLEAN_EXIT_UM:
+            if dia is None or dia > MAX_DRILLBIT_DIAMETER_FOR_CLEAN_EXIT_UM:
                 # If not found or too deep - the hole must be routed
                 # - but let's drill the largest hole first
                 # But to do so - since the router dia can be any smaller size
@@ -282,16 +281,16 @@ class Machining:
 
                 self.warn(
                     f"Exit depth required {exit_depth_required}mm",
-                    f"is greater than the depth allowed {MAX_DRILL_DEPTH_INTO_BACKBOARD_MM}mm"
+                    f"is greater than the depth allowed {MAX_DEPTH_INTO_BACKBOARD_MM}mm"
                     "Switching to routing"
                 )
 
                 # Pick the biggest bit allowed to prepare the hole before routing it
                 nearest = find_nearest_drillbit_size(
-                    MAX_DRILL_BIT_DIAMETER_FOR_CLEAN_EXIT_UM, DRILL_BIT_SIZES_UM, False)
+                    MAX_DRILLBIT_DIAMETER_FOR_CLEAN_EXIT_UM, DRILLBIT_SIZES_UM, False)
 
                 if not nearest:
-                    nearest = max(DRILL_BIT_SIZES_UM)
+                    nearest = max(DRILLBIT_SIZES_UM)
 
                 self.rack.setdefault(nearest, [])
                 self.rack[nearest].extend(coordinates)
