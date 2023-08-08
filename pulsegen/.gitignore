@@ -3,3 +3,5 @@ pulsegen-Edge_Cuts.gbr
 pulsegen-backups/
 pulsegen-job.gbrjob
 ~_autosave-pulsegen.kicad_pcb.lck
+__pycache__/
+*.lck

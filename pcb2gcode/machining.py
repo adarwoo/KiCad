@@ -17,12 +17,13 @@ from utils import Coordinate, interpolate_points, optimize_travel, M2U, U2M
 
 
 # Convert mm constants locally in um constants
-DRILL_BIT_SIZES_UM = [M2U(s) for s in DRILL_BIT_SIZES_MM]
-MAX_DRILL_DEPTH_INTO_BACKBOARD_UM = M2U(MAX_DRILL_DEPTH_INTO_BACKBOARD_MM)
-MIN_EXIT_DEPTH_UM = M2U(MIN_EXIT_DEPTH_MM)
+DRILLBIT_SIZES_UM = [M2U(s) for s in DRILLBIT_SIZES]
+MAX_DRILL_DEPTH_INTO_BACKBOARD_UM = M2U(MAX_DEPTH_INTO_BACKBOARD)
+MIN_EXIT_DEPTH_UM = M2U(MIN_EXIT_DEPTH)
 
 # Multiple the diameter by this number to find the length of the tip of the bit
-HEIGHT_TO_DIA_RATIO = tan(radians((180-DRILLBIT_POINT_ANGLE_DEGREE)/2))
+HEIGHT_TO_DIA_RATIO = tan(radians((180-DRILLBIT_POINT_ANGLE)/2))
+
 # Regex to split the rack string
 SPLIT_RACK_RE = re.compile(r"T(\d+):(R?[\d.]+)")
 
@@ -80,7 +81,7 @@ def optimize_travel(coordinates: List[Tuple[int,int]]) -> List[int]:
     return retval
 
 
-def find_nearest_drillbit_size(n, sizes=DRILLBIT_SIZES_UM, allow_bigger=True):
+def find_nearest_drillbit_size(n, sizes=DRILLBIT_SIZES, allow_bigger=True):
     """
     Find from the standard size, the nearest bit.
     Grab the neareast smaller and nearest larger and check within acceptable
@@ -156,60 +157,6 @@ class Machining:
         # Create the rack and start locating the holes and routes
         self.create_tool_rack(what_to_do)
 
-    def parse_rack_config(self):
-        # Pick the rack from the configuration (exception if not found)
-        rack_str = STANDARD_RACKS_MM.get(USE_RACK_ID)
-        
-        if rack_str is None:
-            self.warn("Invalid rack configuration detected. Defaulting to no rack")
-            rack_str = ""
-
-        # Create the rack lookup
-        # Use re.findall() to find all matches in the string
-        matches = re.findall(SPLIT_RACK_RE, rack_str)
-
-        if not matches:
-            self.warn(
-                f"Bad syntax in rack {USE_RACK_ID}",
-                "Defaulting to manual."
-                "It is recommended to ABORT the machining and fix the rack"
-            )
-        else:
-            matches = []
-
-        for tool_number, tool_diameter in matches:
-            is_ROUTERBIT = tool_diameter.startswith('R')
-            tool_diameter = tool_diameter[1:] if is_ROUTERBIT else tool_diameter                
-            tool_diameter = float(tool_diameter)
-
-            # Check the tool number is not repeated
-            if tool_number in self.rack:
-                self.warn(
-                    f"Bad rack {USE_RACK_ID}: Tool {tool_number} appears more than once",
-                    "Ignoring the tool diameter {tool_diameter:.2f}",
-                    "It is recommended to ABORT the machining and fix the rack"
-                )
-                continue
-
-            if 0.1 <= tool_diameter <= 6.0:
-                print(f"Tool Number: {tool_number}, Tool Diameter: {tool_diameter:.2f}, Router: {is_ROUTERBIT}")
-            else:
-                self.warn(
-                    f"Invalid tool diameter {tool_diameter:.2f} mm for T{tool_number} found in the rack",
-                    "Ignoring this tool.",
-                    "It is recommended to ABORT the machining and fix the rack"
-                )
-                continue
-
-            # Make sure the diameter matches with the standard drill sizes - simply warn
-            if tool_diameter not in DRILLBIT_SIZES_MM:
-                self.warn(
-                    f"T{tool_number} in the rack {USE_RACK_ID} has a non standard diameter {tool_diameter}."
-                )
-
-            # Insert into our rack in um
-            self.rack[tool_number] = M2U(tool_diameter)
-
     def warn(self, *args):
         self.warnings.append('\n'.join(args))
     
@@ -259,7 +206,7 @@ class Machining:
 
                 self.warn(
                     f"Exit depth required {exit_depth_required}mm",
-                    f"is greater than the depth allowed {MAX_DEPTH_INTO_BACKBOARD_MM}mm"
+                    f"is greater than the depth allowed {MAX_DEPTH_INTO_BACKBOARD}mm"
                     "Switching to routing"
                 )
 

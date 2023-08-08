@@ -20,15 +20,20 @@ from machining import Machining, MachiningWhat
 # Load from this folder
 this_path = Path(__file__).resolve().parent
 pcb_file_path = this_path.parent / "pulsegen/pulsegen.kicad_pcb"
-board = pcbnew.LoadBoard(str(pcb_file_path))
+#board = pcbnew.LoadBoard(str(pcb_file_path))
 
 # Create an inventory of all things which could be machined in the PCB
-inventory = Inventory(board)
+#inventory = Inventory(board)
 
 # Create an object to machine PTH only
-machining = Machining(inventory, MachiningWhat.DRILL_PTH)
+#machining = Machining(inventory, MachiningWhat.DRILL_PTH)
 
 # Generate the GCode
-gcode = machining.gcode()
+#gcode = machining.gcode()
 
-print(gcode)
+#print(gcode)
+
+import rack
+
+r = rack.RackManager()
+
