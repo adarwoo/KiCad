@@ -49,6 +49,13 @@ MAX_Z_FEEDRATE = 2000
 # Min feedrate for the CNC in mm/min
 MIN_Z_FEEDRATE = 200
 
+# Maximum slot length to dia ratio for peck drilling before routing
+# Example: If 4 - it means that the slot size (end to end) is 4xdiameter.
+# For a 1mm bit, the max slot width is 4mm end-to-end  or 3mm center to center.
+# Multiply by SLOT_DRILL_PER_HOLE_WIDTH to work out the number of pecks
+# If 0 - a router bit will always be required to drill the slot
+SLOT_DRILL_MAX_LENGTH_TO_DIAMETER_RATIO = 4
+
 # Slot drilling pecking distance as ratio of the hole diameter
 # So 1/4, means the pecking distance is 1/4 of the hole diameter
 # A slot of 2 mm long, drill with a 1mm drill bit, will require 5 holes
