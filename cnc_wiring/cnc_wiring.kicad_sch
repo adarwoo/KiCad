@@ -1,0 +1,51 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "387bdc5c-4e04-4cf7-964b-842ad364363d")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 101.6 90.17)
+		(size 46.99 19.05)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c4924016-beb2-46ff-acbd-2d77f9910938")
+		(property "Sheetname" "Power supplies"
+			(at 101.6 89.4584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "psus.kicad_sch"
+			(at 101.6 109.8046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "cnc_wiring"
+				(path "/387bdc5c-4e04-4cf7-964b-842ad364363d"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
