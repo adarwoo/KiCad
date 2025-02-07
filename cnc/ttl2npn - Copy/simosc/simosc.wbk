@@ -1,0 +1,14 @@
+version 2
+1
+9
+.tran 1m 3 0{return}.kicad adjustpaths
+3
+1
+V(Net-_Q1-B_)
+ 
+1
+V(OUT)
+ 
+1
+V(VDD)
+ 

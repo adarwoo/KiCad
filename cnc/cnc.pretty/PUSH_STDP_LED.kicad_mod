@@ -1,0 +1,155 @@
+(footprint "PUSH_STDP_LED"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5bf0e744-d80d-4eef-a0f1-4fb8a19d806a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "PUSH_STDP_LED"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "36d9ff4a-5f7e-4a03-b48f-39563a1352b0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2adee425-5110-4ea0-9246-69ca1181d0c7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d799c6fa-e1b1-4243-b150-fe0ff5200b92")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ebb08237-1700-4ee8-9f4a-3a604206287c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_circle
+		(center 0 0)
+		(end 0 -8)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "d868d333-fb7d-4273-a39a-70b69ac3e221")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 8.5 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill none)
+		(layer "F.CrtYd")
+		(uuid "f9ad4b59-4794-4ec5-9808-d53f25750555")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "0c92466c-ce06-49be-bbc1-f354017cd9e2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "C" thru_hole oval
+		(at 0 4.5)
+		(size 4 1.4)
+		(drill oval 3.2 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "56b8c35e-c24b-4019-bbbc-51950500d0de")
+	)
+	(pad "L1" thru_hole oval
+		(at 4.35 -2.35 90)
+		(size 4 1.4)
+		(drill oval 3.2 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "c7c956c8-3e4e-4b27-8c62-6ccd7beddd0d")
+	)
+	(pad "L2" thru_hole oval
+		(at -4.35 -2.35 90)
+		(size 4 1.4)
+		(drill oval 3.2 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "ee7fe1b0-49fb-4e04-8744-f5ac498dbd03")
+	)
+	(pad "NC" thru_hole oval
+		(at 0 -4.5)
+		(size 4 1.4)
+		(drill oval 3.2 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "df12a79a-1036-4357-b049-34d6b6726688")
+	)
+	(pad "NO" thru_hole oval
+		(at 0 0)
+		(size 4 1.4)
+		(drill oval 3.2 0.8)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9f5489fa-b4d3-49ff-ba0a-d657fe2d2501")
+	)
+	(model "E:/gax/kicad/cnc/cnc.pretty/Push Button M16.STEP"
+		(offset
+			(xyz 0 0 25.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
