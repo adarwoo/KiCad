@@ -645,6 +645,30 @@
     [
       "24bc57b9-acf8-493e-9df6-7015f7e1bb8a",
       "Root"
+    ],
+    [
+      "8bb737e4-ae38-4c12-905d-9a7f99a5ad7b",
+      "Power supply"
+    ],
+    [
+      "4d858077-b048-410a-a113-2658348ba3c3",
+      "Microcontroller"
+    ],
+    [
+      "e9bddb0b-9b24-4098-b425-b2be058a2c5e",
+      "Modbus"
+    ],
+    [
+      "df7ad5e9-a77d-436b-9fb9-4577ed5abd0a",
+      "Isolated Inputs Outputs"
+    ],
+    [
+      "31d29cee-9d60-49fe-bbba-00df04463167",
+      "I2C"
+    ],
+    [
+      "ba548bf2-35f3-402f-92fd-674425794e20",
+      "Connections"
     ]
   ],
   "text_variables": {}
