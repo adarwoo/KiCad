@@ -5563,7 +5563,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e622b0e-d9f4-4aa8-9027-062fff5b9143")
-		(property "Reference" "J1"
+		(property "Reference" "J20"
 			(at 38.862 151.892 0)
 			(effects
 				(font
@@ -5629,7 +5629,7 @@
 		(instances
 			(project "central_control"
 				(path "/24bc57b9-acf8-493e-9df6-7015f7e1bb8a/4d858077-b048-410a-a113-2658348ba3c3"
-					(reference "J1")
+					(reference "J20")
 					(unit 1)
 				)
 			)
