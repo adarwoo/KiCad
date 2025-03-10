@@ -5,7 +5,7 @@
 	(uuid "4223362b-625c-4a19-851c-fef2d3265436")
 	(paper "A4")
 	(lib_symbols
-		(symbol "ARex:NFM611R30"
+		(symbol "Arex:NFM611R30"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -751,6 +751,15 @@
 				)
 			)
 			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2449,6 +2458,16 @@
 		)
 		(uuid "fb6d6c55-9a56-4da1-bb8b-34689be5f3f1")
 	)
+	(label "RAW_VCC"
+		(at 172.72 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "179774ef-a860-47bf-988a-f2b841b2bec2")
+	)
 	(symbol
 		(lib_id "Device:LED")
 		(at 242.57 92.71 90)
@@ -2494,6 +2513,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 242.57 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
 			(at 242.57 92.71 0)
 			(effects
 				(font
@@ -2649,77 +2677,6 @@
 			(project "central_control"
 				(path "/24bc57b9-acf8-493e-9df6-7015f7e1bb8a/8bb737e4-ae38-4c12-905d-9a7f99a5ad7b"
 					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ARex:NFM611R30")
-		(at 190.5 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1cabe2fb-c1c9-4145-ba08-47becee6e933")
-		(property "Reference" "F2"
-			(at 190.5 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 190.5 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Adarwoo:Murata_NFM61R"
-			(at 190.5 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 190.5 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 190.5 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ecf2f292-7cf3-4d55-88f6-03521a34eed2")
-		)
-		(pin "3"
-			(uuid "6cda49bf-2998-46d6-8e62-93af58a06db8")
-		)
-		(pin "1"
-			(uuid "18c47a38-a82a-4042-b6ed-80c20949851a")
-		)
-		(instances
-			(project "central_control"
-				(path "/24bc57b9-acf8-493e-9df6-7015f7e1bb8a/8bb737e4-ae38-4c12-905d-9a7f99a5ad7b"
-					(reference "F2")
 					(unit 1)
 				)
 			)
@@ -2994,6 +2951,77 @@
 		)
 	)
 	(symbol
+		(lib_id "Arex:NFM611R30")
+		(at 99.06 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3a1182d4-7321-4041-9ab1-964b2e2a8902")
+		(property "Reference" "F1"
+			(at 99.06 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 99.06 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Adarwoo:Murata_NFM61R"
+			(at 99.06 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "20c14644-8bf6-4821-9867-3763d6236887")
+		)
+		(pin "2"
+			(uuid "a0ea3b51-dd09-44a7-b343-610826add735")
+		)
+		(pin "1"
+			(uuid "bdb7a606-7ca0-4b3c-8190-795f8191058f")
+		)
+		(instances
+			(project "central_control"
+				(path "/24bc57b9-acf8-493e-9df6-7015f7e1bb8a/8bb737e4-ae38-4c12-905d-9a7f99a5ad7b"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 210.82 102.87 180)
 		(unit 1)
@@ -3125,6 +3153,77 @@
 			(project "central_control"
 				(path "/24bc57b9-acf8-493e-9df6-7015f7e1bb8a/8bb737e4-ae38-4c12-905d-9a7f99a5ad7b"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Arex:NFM611R30")
+		(at 190.5 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "58ed3bc4-a09a-4d0c-a036-b8d84c480d75")
+		(property "Reference" "F2"
+			(at 190.5 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 190.5 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Adarwoo:Murata_NFM61R"
+			(at 190.5 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 190.5 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 190.5 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "19b0eb6e-27d8-437b-a23a-3859a5b379e0")
+		)
+		(pin "2"
+			(uuid "7e50fdb0-6279-4255-9b60-1f69bde687d1")
+		)
+		(pin "1"
+			(uuid "1a306170-43f9-40a6-9d9a-2c98a0f484c6")
+		)
+		(instances
+			(project "central_control"
+				(path "/24bc57b9-acf8-493e-9df6-7015f7e1bb8a/8bb737e4-ae38-4c12-905d-9a7f99a5ad7b"
+					(reference "F2")
 					(unit 1)
 				)
 			)
@@ -3753,77 +3852,6 @@
 			(project "central_control"
 				(path "/24bc57b9-acf8-493e-9df6-7015f7e1bb8a/8bb737e4-ae38-4c12-905d-9a7f99a5ad7b"
 					(reference "C2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ARex:NFM611R30")
-		(at 99.06 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9844e6e5-4053-4307-b2b0-0b783cb90e43")
-		(property "Reference" "F1"
-			(at 99.06 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "~"
-			(at 99.06 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Adarwoo:Murata_NFM61R"
-			(at 99.06 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 99.06 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 99.06 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "aeabeced-ec98-4b82-b55f-cc1b306733a7")
-		)
-		(pin "3"
-			(uuid "dcc3190a-0464-4ef1-b18c-bf0a45951c1b")
-		)
-		(pin "1"
-			(uuid "a7818920-eef4-482c-9c20-e187320d8e9d")
-		)
-		(instances
-			(project "central_control"
-				(path "/24bc57b9-acf8-493e-9df6-7015f7e1bb8a/8bb737e4-ae38-4c12-905d-9a7f99a5ad7b"
-					(reference "F1")
 					(unit 1)
 				)
 			)
